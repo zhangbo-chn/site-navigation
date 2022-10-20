@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import SearchBox from '../components/SearchBox.vue'
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <SearchBox />
   </main>
 </template>

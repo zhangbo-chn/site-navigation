@@ -1,0 +1,114 @@
+[
+  {
+    "name": "baidu",
+    "icon": "/assets/img/baidu-xs.png",
+    "searchlink": "https://www.baidu.com/s",
+    "searchname": "wd",
+    "color": "#3245df",
+    "placeholder": "百度一下"
+  },
+  {
+    "name": "google",
+    "icon": "/assets/img/google-xs.png",
+    "searchlink": "https://www.google.com/search",
+    "searchname": "q",
+    "color": "#4285f4",
+    "placeholder": "google搜索"
+  },
+  {
+    "name": "bing",
+    "icon": "/assets/img/bing-xs.png",
+    "searchlink": "https://cn.bing.com/search",
+    "searchname": "q",
+    "color": "#00868B",
+    "placeholder": "Bing搜索"
+  },
+  {
+    "name": "sougou",
+    "icon": "/assets/img/sougou-xs.png",
+    "searchlink": "https://www.sogou.com/web",
+    "searchname": "query",
+    "color": "#f94c18",
+    "placeholder": "搜狗搜索"
+  },
+  {
+    "name": "wechat",
+    "icon": "/assets/img/wechat-xs.png",
+    "searchlink": "https://weixin.sogou.com/weixin",
+    "searchname": "query",
+    "color": "#2ca43a",
+    "placeholder": "微信文章"
+  },
+  {
+    "name": "quark",
+    "icon": "/assets/img/quark-xs.png",
+    "searchlink": "https://quark.sm.cn/s",
+    "searchname": "q",
+    "color": "#6182f6",
+    "placeholder": "夸克搜索"
+  },
+  {
+    "name": "taobao",
+    "icon": "/assets/img/taobao-xs.png",
+    "searchlink": "https://s.taobao.com/search",
+    "searchname": "q",
+    "color": "#FF5B00",
+    "placeholder": "淘，我喜欢"
+  },
+  {
+    "name": "jingdong",
+    "icon": "/assets/img/jingdong-xs.png",
+    "searchlink": "https://search.jd.com/Search",
+    "searchname": "keyword",
+    "color": "#F30213",
+    "placeholder": "狗东"
+  },
+  {
+    "name": "bilibili",
+    "icon": "/assets/img/bilibili-xs.png",
+    "searchlink": "https://search.bilibili.com/all",
+    "searchname": "keyword",
+    "color": "#e47494",
+    "placeholder": "B站搜索"
+  },
+  {
+    "name": "github",
+    "icon": "/assets/img/github-xs.png",
+    "searchlink": "https://github.com/search",
+    "searchname": "q",
+    "color": "#24292e",
+    "placeholder": "大型同性交友社区"
+  },
+  {
+    "name": "toutiao",
+    "icon": "/assets/img/toutiao-xs.png",
+    "searchlink": "https://m.toutiao.com/search",
+    "searchname": "keyword",
+    "color": "#ed2f28",
+    "placeholder": "今日头条"
+  },
+  {
+    "name": "weibo",
+    "icon": "/assets/img/weibo-xs.png",
+    "searchlink": "https://s.weibo.com/weibo",
+    "searchname": "q",
+    "color": "#e6162d",
+    "placeholder": "渣浪"
+  },
+  {
+    "name": "zhihu",
+    "icon": "/assets/img/zhihu-xs.png",
+    "searchlink": "https://www.zhihu.com/search",
+    "searchname": "q",
+    "color": "#1087eb",
+    "placeholder": "泻药"
+  },
+  {
+    "name": "kuaidi",
+    "icon": "/assets/img/kuaidi-xs.png",
+    "searchlink": "https://m.kuaidi100.com/result.jsp",
+    "searchname": "nu",
+    "color": "#317EE7",
+    "placeholder": "查快递"
+  }
+]

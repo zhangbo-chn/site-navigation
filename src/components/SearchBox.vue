@@ -18,50 +18,69 @@ export default {
   },
   mounted() {
     const engineStr = sessionStorage.getItem("engine");
-    if (engineStr) {
-      this.curEngine = JSON.parse(engineStr);
-    } else {
-      this.curEngine = searchEngine[0];
+    this.curEngine = engineStr ? JSON.parse(engineStr) : searchEngine[0];
+  },
+  methods: {
+    getImgSrc(img: string) {
+      return new URL(`../${img}`, import.meta.url).href;
+    },
+    doSearch() {
+      console.log("do search")
     }
   }
-
 }
 </script>
 
 <template>
   <div id="search">
-    <div id="search-logo">
-      <img v-if="curEngine.icon" :src="curEngine.icon" alt="">
+    <div id="search-logo-big">
+      <img src="" alt="">
     </div>
     <div id="search-box">
-      <input id="search-input" type="text" placeholder="百度一下" />
-      <button></button>
+      <div id="search-logo">
+        <img v-if="curEngine.icon" :src="getImgSrc(curEngine.icon)" alt="">
+      </div>
+      <input id="search-input" type="text" :placeholder="curEngine.placeholder" size="50" />
+      <img id="search-btn" src="@/assets/img/icon-search.svg" @click="doSearch" alt="">
     </div>
   </div>
 </template>
 
 <style lang="less" scoped>
 #search {
-  #search-log {}
+  #search-log-big {}
 
   #search-box {
-    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
     height: 40px;
-    *z-index: 999;
     border-right: 0;
     background: 0 0;
+    padding: 0 6px;
     background-color: #F8F8F8;
-    border-radius: 10px 0 0 10px;
+    border-radius: 10px;
     border: 1px solid #4E6EF2;
-    border-right: 0;
+
+    #search-logo img {
+      width: 32px;
+      height: 32px;
+    }
+
+    #search-input {
+      height: 38px;
+      width: 100%;
+      background-color: #F8F8F8;
+      border: none;
+      margin: 0 8px;
+    }
+
+    #search-btn {
+      width: 26px;
+      height: 26px;
+    }
   }
 
-  #search-input {
-    height: 38px;
-    widows: 100%;
-    background-color: #F8F8F8;
-    border: none;
-    margin-left: 20px;
-  }
+
 }
 </style>

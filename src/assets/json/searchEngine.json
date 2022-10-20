@@ -1,7 +1,7 @@
 [
   {
     "name": "baidu",
-    "icon": "/assets/img/baidu-xs.png",
+    "icon": "assets/img/baidu-icon.png",
     "searchlink": "https://www.baidu.com/s",
     "searchname": "wd",
     "color": "#3245df",
@@ -9,7 +9,7 @@
   },
   {
     "name": "google",
-    "icon": "/assets/img/google-xs.png",
+    "icon": "assets/img/google-icon.png",
     "searchlink": "https://www.google.com/search",
     "searchname": "q",
     "color": "#4285f4",
@@ -17,7 +17,7 @@
   },
   {
     "name": "bing",
-    "icon": "/assets/img/bing-xs.png",
+    "icon": "assets/img/bing-icon.png",
     "searchlink": "https://cn.bing.com/search",
     "searchname": "q",
     "color": "#00868B",
@@ -25,7 +25,7 @@
   },
   {
     "name": "sougou",
-    "icon": "/assets/img/sougou-xs.png",
+    "icon": "assets/img/sougou-icon.png",
     "searchlink": "https://www.sogou.com/web",
     "searchname": "query",
     "color": "#f94c18",
@@ -33,7 +33,7 @@
   },
   {
     "name": "wechat",
-    "icon": "/assets/img/wechat-xs.png",
+    "icon": "assets/img/wechat-icon.png",
     "searchlink": "https://weixin.sogou.com/weixin",
     "searchname": "query",
     "color": "#2ca43a",
@@ -41,7 +41,7 @@
   },
   {
     "name": "quark",
-    "icon": "/assets/img/quark-xs.png",
+    "icon": "assets/img/quark-icon.png",
     "searchlink": "https://quark.sm.cn/s",
     "searchname": "q",
     "color": "#6182f6",
@@ -49,7 +49,7 @@
   },
   {
     "name": "taobao",
-    "icon": "/assets/img/taobao-xs.png",
+    "icon": "assets/img/taobao-icon.png",
     "searchlink": "https://s.taobao.com/search",
     "searchname": "q",
     "color": "#FF5B00",
@@ -57,7 +57,7 @@
   },
   {
     "name": "jingdong",
-    "icon": "/assets/img/jingdong-xs.png",
+    "icon": "assets/img/jingdong-icon.png",
     "searchlink": "https://search.jd.com/Search",
     "searchname": "keyword",
     "color": "#F30213",
@@ -65,7 +65,7 @@
   },
   {
     "name": "bilibili",
-    "icon": "/assets/img/bilibili-xs.png",
+    "icon": "assets/img/bilibili-icon.png",
     "searchlink": "https://search.bilibili.com/all",
     "searchname": "keyword",
     "color": "#e47494",
@@ -73,7 +73,7 @@
   },
   {
     "name": "github",
-    "icon": "/assets/img/github-xs.png",
+    "icon": "assets/img/github-icon.png",
     "searchlink": "https://github.com/search",
     "searchname": "q",
     "color": "#24292e",
@@ -81,7 +81,7 @@
   },
   {
     "name": "toutiao",
-    "icon": "/assets/img/toutiao-xs.png",
+    "icon": "assets/img/toutiao-icon.png",
     "searchlink": "https://m.toutiao.com/search",
     "searchname": "keyword",
     "color": "#ed2f28",
@@ -89,7 +89,7 @@
   },
   {
     "name": "weibo",
-    "icon": "/assets/img/weibo-xs.png",
+    "icon": "assets/img/weibo-icon.png",
     "searchlink": "https://s.weibo.com/weibo",
     "searchname": "q",
     "color": "#e6162d",
@@ -97,7 +97,7 @@
   },
   {
     "name": "zhihu",
-    "icon": "/assets/img/zhihu-xs.png",
+    "icon": "assets/img/zhihu-icon.png",
     "searchlink": "https://www.zhihu.com/search",
     "searchname": "q",
     "color": "#1087eb",
@@ -105,7 +105,7 @@
   },
   {
     "name": "kuaidi",
-    "icon": "/assets/img/kuaidi-xs.png",
+    "icon": "assets/img/kuaidi-icon.png",
     "searchlink": "https://m.kuaidi100.com/result.jsp",
     "searchname": "nu",
     "color": "#317EE7",

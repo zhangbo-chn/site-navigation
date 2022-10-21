@@ -2,113 +2,127 @@
   {
     "name": "baidu",
     "icon": "assets/img/baidu-icon.png",
+    "logo": "assets/img/baidu.png",
+    "color": "#306cff",
     "searchlink": "https://www.baidu.com/s",
     "searchname": "wd",
-    "color": "#3245df",
     "placeholder": "百度一下"
   },
   {
     "name": "google",
     "icon": "assets/img/google-icon.png",
+    "logo": "assets/img/google.png",
+    "color": "#4285f4",
     "searchlink": "https://www.google.com/search",
     "searchname": "q",
-    "color": "#4285f4",
     "placeholder": "google搜索"
   },
   {
     "name": "bing",
     "icon": "assets/img/bing-icon.png",
+    "logo": "assets/img/bing.png",
+    "color": "#0c8484",
     "searchlink": "https://cn.bing.com/search",
     "searchname": "q",
-    "color": "#00868B",
     "placeholder": "Bing搜索"
   },
   {
     "name": "sougou",
     "icon": "assets/img/sougou-icon.png",
+    "logo": "assets/img/sougou.png",
+    "color": "#ff7d2a",
     "searchlink": "https://www.sogou.com/web",
     "searchname": "query",
-    "color": "#f94c18",
     "placeholder": "搜狗搜索"
   },
   {
     "name": "wechat",
     "icon": "assets/img/wechat-icon.png",
+    "logo": "assets/img/wechat.png",
+    "color": "#28c445",
     "searchlink": "https://weixin.sogou.com/weixin",
     "searchname": "query",
-    "color": "#2ca43a",
     "placeholder": "微信文章"
   },
   {
     "name": "quark",
     "icon": "assets/img/quark-icon.png",
+    "logo": "assets/img/quark.png",
+    "color": "#5c5cef",
     "searchlink": "https://quark.sm.cn/s",
     "searchname": "q",
-    "color": "#6182f6",
     "placeholder": "夸克搜索"
   },
   {
     "name": "taobao",
     "icon": "assets/img/taobao-icon.png",
+    "logo": "assets/img/taobao.png",
+    "color": "#fc8848",
     "searchlink": "https://s.taobao.com/search",
     "searchname": "q",
-    "color": "#FF5B00",
     "placeholder": "淘，我喜欢"
   },
   {
     "name": "jingdong",
     "icon": "assets/img/jingdong-icon.png",
+    "logo": "assets/img/jingdong.png",
+    "color": "#e12319",
     "searchlink": "https://search.jd.com/Search",
     "searchname": "keyword",
-    "color": "#F30213",
     "placeholder": "狗东"
   },
   {
     "name": "bilibili",
     "icon": "assets/img/bilibili-icon.png",
+    "logo": "assets/img/bilibili.png",
+    "color": "#20b0e3",
     "searchlink": "https://search.bilibili.com/all",
     "searchname": "keyword",
-    "color": "#e47494",
     "placeholder": "B站搜索"
   },
   {
     "name": "github",
     "icon": "assets/img/github-icon.png",
+    "logo": "assets/img/github.png",
+    "color": "#231f20",
     "searchlink": "https://github.com/search",
     "searchname": "q",
-    "color": "#24292e",
     "placeholder": "大型同性交友社区"
   },
   {
     "name": "toutiao",
     "icon": "assets/img/toutiao-icon.png",
+    "logo": "assets/img/toutiao.png",
+    "color": "#e62318",
     "searchlink": "https://m.toutiao.com/search",
     "searchname": "keyword",
-    "color": "#ed2f28",
     "placeholder": "今日头条"
   },
   {
     "name": "weibo",
     "icon": "assets/img/weibo-icon.png",
+    "logo": "assets/img/weibo.png",
+    "color": "#e71f19",
     "searchlink": "https://s.weibo.com/weibo",
     "searchname": "q",
-    "color": "#e6162d",
     "placeholder": "渣浪"
   },
   {
     "name": "zhihu",
     "icon": "assets/img/zhihu-icon.png",
+    "logo": "assets/img/zhihu.png",
+    "color": "#49c0fb",
     "searchlink": "https://www.zhihu.com/search",
     "searchname": "q",
-    "color": "#1087eb",
     "placeholder": "泻药"
   },
   {
     "name": "kuaidi",
     "icon": "assets/img/kuaidi-icon.png",
+    "logo": "assets/img/kuaidi.png",
+    "color": "#2e99fb",
     "searchlink": "https://m.kuaidi100.com/result.jsp",
     "searchname": "nu",
-    "color": "#317EE7",
     "placeholder": "查快递"
   }
 ]

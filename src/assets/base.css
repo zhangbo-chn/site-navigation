@@ -71,9 +71,33 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
 }
 
 input:focus,
 textarea:focus {
   outline: none;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none
+}
+
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none;
+  color: #777
 }

@@ -7,3 +7,9 @@ import SearchBox from '../components/SearchBox.vue'
     <SearchBox />
   </main>
 </template>
+
+<style scoped lang="less">
+  main{
+    max-width: 800px;
+  }
+</style>

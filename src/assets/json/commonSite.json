@@ -1,0 +1,12 @@
+[
+  {
+    "name": "今日热榜",
+    "icon": "assets/img/commonSite/jinrirebang.png",
+    "url": "https://tophub.today/"
+  },
+  {
+    "name": "腾讯视频",
+    "icon": "assets/img/commonSite/tengxunshipin.png",
+    "url": "https://v.qq.com/"
+  }
+]

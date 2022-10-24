@@ -1,128 +1,144 @@
 [
   {
-    "name": "baidu",
+    "name": "百度",
     "icon": "assets/img/baidu-icon.png",
     "logo": "assets/img/baidu.png",
     "color": "#306cff",
     "searchlink": "https://www.baidu.com/s",
     "searchname": "wd",
-    "placeholder": "百度一下"
+    "placeholder": "百度一下",
+    "extra": null
   },
   {
-    "name": "google",
+    "name": "Google",
     "icon": "assets/img/google-icon.png",
     "logo": "assets/img/google.png",
     "color": "#4285f4",
     "searchlink": "https://www.google.com/search",
     "searchname": "q",
-    "placeholder": "google搜索"
+    "placeholder": "google搜索",
+    "extra": null
   },
   {
-    "name": "bing",
+    "name": "Bing",
     "icon": "assets/img/bing-icon.png",
     "logo": "assets/img/bing.png",
     "color": "#0c8484",
     "searchlink": "https://cn.bing.com/search",
     "searchname": "q",
-    "placeholder": "Bing搜索"
+    "placeholder": "Bing搜索",
+    "extra": null
   },
   {
-    "name": "sougou",
+    "name": "搜狗",
     "icon": "assets/img/sougou-icon.png",
     "logo": "assets/img/sougou.png",
     "color": "#ff7d2a",
     "searchlink": "https://www.sogou.com/web",
     "searchname": "query",
-    "placeholder": "搜狗搜索"
+    "placeholder": "搜狗搜索",
+    "extra": null
   },
   {
-    "name": "wechat",
+    "name": "微信",
     "icon": "assets/img/wechat-icon.png",
     "logo": "assets/img/wechat.png",
     "color": "#28c445",
     "searchlink": "https://weixin.sogou.com/weixin",
     "searchname": "query",
-    "placeholder": "微信文章"
+    "placeholder": "微信文章",
+    "extra": {
+      "type": 2
+    }
   },
   {
-    "name": "quark",
+    "name": "夸克",
     "icon": "assets/img/quark-icon.png",
     "logo": "assets/img/quark.png",
     "color": "#5c5cef",
     "searchlink": "https://quark.sm.cn/s",
     "searchname": "q",
-    "placeholder": "夸克搜索"
+    "placeholder": "夸克搜索",
+    "extra": null
   },
   {
-    "name": "taobao",
+    "name": "淘宝",
     "icon": "assets/img/taobao-icon.png",
     "logo": "assets/img/taobao.png",
     "color": "#fc8848",
     "searchlink": "https://s.taobao.com/search",
     "searchname": "q",
-    "placeholder": "淘，我喜欢"
+    "placeholder": "淘，我喜欢",
+    "extra": null
   },
   {
-    "name": "jingdong",
+    "name": "京东",
     "icon": "assets/img/jingdong-icon.png",
     "logo": "assets/img/jingdong.png",
     "color": "#e12319",
     "searchlink": "https://search.jd.com/Search",
     "searchname": "keyword",
-    "placeholder": "狗东"
+    "placeholder": "狗东",
+    "extra": null
   },
   {
-    "name": "bilibili",
+    "name": "B站",
     "icon": "assets/img/bilibili-icon.png",
     "logo": "assets/img/bilibili.png",
     "color": "#20b0e3",
     "searchlink": "https://search.bilibili.com/all",
     "searchname": "keyword",
-    "placeholder": "B站搜索"
+    "placeholder": "B站搜索",
+    "extra": null
   },
   {
-    "name": "github",
+    "name": "Github",
     "icon": "assets/img/github-icon.png",
     "logo": "assets/img/github.png",
     "color": "#231f20",
     "searchlink": "https://github.com/search",
     "searchname": "q",
-    "placeholder": "大型同性交友社区"
+    "placeholder": "大型同性交友社区",
+    "extra": null
   },
   {
-    "name": "toutiao",
+    "name": "头条",
     "icon": "assets/img/toutiao-icon.png",
     "logo": "assets/img/toutiao.png",
     "color": "#e62318",
     "searchlink": "https://m.toutiao.com/search",
     "searchname": "keyword",
-    "placeholder": "今日头条"
+    "placeholder": "今日头条",
+    "extra": null
   },
   {
-    "name": "weibo",
+    "name": "微博",
     "icon": "assets/img/weibo-icon.png",
     "logo": "assets/img/weibo.png",
     "color": "#e71f19",
     "searchlink": "https://s.weibo.com/weibo",
     "searchname": "q",
-    "placeholder": "渣浪"
+    "placeholder": "渣浪",
+    "extra": null
   },
   {
-    "name": "zhihu",
+    "name": "知乎",
     "icon": "assets/img/zhihu-icon.png",
     "logo": "assets/img/zhihu.png",
     "color": "#49c0fb",
     "searchlink": "https://www.zhihu.com/search",
     "searchname": "q",
-    "placeholder": "泻药"
+    "placeholder": "泻药",
+    "extra": null
   },
   {
-    "name": "kuaidi",
+    "name": "快递",
     "icon": "assets/img/kuaidi-icon.png",
     "logo": "assets/img/kuaidi.png",
     "color": "#2e99fb",
     "searchlink": "https://m.kuaidi100.com/result.jsp",
     "searchname": "nu",
-    "placeholder": "查快递"
+    "placeholder": "查快递",
+    "extra": null
   }
 ]

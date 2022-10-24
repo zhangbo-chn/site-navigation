@@ -76,11 +76,16 @@ export default {
 
       if (event.keyCode === 38) {
         if (this.curSearchItem === -1) this.oldSearchText = this.searchText
-        if (this.curSearchItem === 0) {
+        if (this.curSearchItem === -1) {
           this.curSearchItem = this.searchList.length - 1
+          this.searchText = this.searchList[this.curSearchItem]
         } else {
           this.curSearchItem--
-          this.searchText = this.searchList[this.curSearchItem]
+          if (this.curSearchItem === -1) {
+            this.searchText = this.oldSearchText
+          } else {
+            this.searchText = this.searchList[this.curSearchItem]
+          }
         }
         this.isSearchListLock = true
       } else if (event.keyCode === 40) {

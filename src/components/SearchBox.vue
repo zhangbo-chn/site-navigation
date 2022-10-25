@@ -302,7 +302,7 @@ export default {
 
       .li-active {
         color: rgb(48, 117, 237);
-        background-color: #8FBC8F;
+        background-color: #d0f7d0;
         cursor: pointer;
       }
     }
@@ -315,7 +315,6 @@ export default {
     border-radius: 0 0 10px 10px;
     margin-top: -1px;
     background-color: #FDFEFE;
-    padding-left: 10px;
     padding-top: 1px;
     padding-bottom: 6px;
     width: 100px;
@@ -328,10 +327,13 @@ export default {
       user-select: none;
 
       li {
+        width: 100%;
+        padding-left: 10px;
         height: 26px;
         line-height: 26px;
         display: flex;
         justify-items: center;
+        align-items: center;
         cursor: pointer;
       }
 

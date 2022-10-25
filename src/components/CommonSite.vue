@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <div id="sites"></div>
 </template>
 
 <script lang="ts">
@@ -9,5 +9,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
+#sites {
+  max-width: 550px;
+}
 </style>

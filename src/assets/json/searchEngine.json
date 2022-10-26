@@ -85,7 +85,7 @@
     "name": "B站",
     "icon": "assets/img/searchBox/bilibili-icon.png",
     "logo": "assets/img/searchBox/bilibili.png",
-    "color": "#20b0e3",
+    "color": "#fb7299",
     "searchlink": "https://search.bilibili.com/all",
     "searchname": "keyword",
     "placeholder": "B站搜索",

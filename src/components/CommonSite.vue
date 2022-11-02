@@ -8,7 +8,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style scoped lang="scss">
 #sites {
   max-width: 550px;
 }

@@ -3,9 +3,9 @@ const path = require('path')
 module.exports = {
   pluginOptions: {
     'style-resources-loader': {
-      preProcessor: 'less',
+      preProcessor: 'scss',
       patterns: [
-        path.resolve(__dirname, 'src/global.less')
+        path.resolve(__dirname, 'src/global.scss')
       ]
     }
   }

@@ -1,6 +1,7 @@
-const path = require('path')
+import path from 'path'
 
 module.exports = {
+  publicPath: './',
   pluginOptions: {
     'style-resources-loader': {
       preProcessor: 'scss',

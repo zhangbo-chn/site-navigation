@@ -31,7 +31,8 @@ let searchEngineList = searchEngine,
   curSearchItem = ref<number>(-1),
   isSearchListLock = false,
   oldSearchText = "",
-  isShowEngineList = ref<boolean>(false)
+  isShowEngineList = ref<boolean>(false),
+  isSearchInputFouce = ref<boolean>(false)
 
 const engineStr = localStorage.getItem("engine");
 curEngine.value = engineStr ? JSON.parse(engineStr) : searchEngineList[0];
@@ -158,13 +159,15 @@ watch(isShowEngineList, (val: any) => {
       'search-box-radius-0': !isShowSearchList && !isShowEngineList,
       'search-box-radius-1': isShowSearchList,
       'search-box-radius-2': isShowEngineList,
+      'search-box-shadow': isSearchInputFouce
     }">
       <img id="search-icon" @click="isShowEngineList = !isShowEngineList" v-if="curEngine.icon"
         :src="getImgSrc(curEngine.icon)" alt="" />
       <form @submit="checkForm" ref="searchFrom" :action="curEngine.searchlink" id="search-form">
         <input id="search-input" v-model="searchText" type="text" autocomplete="new-password"
           :name="curEngine.searchname" :placeholder="curEngine.placeholder" size="100"
-          @keydown="choseSearchItem($event)" contenteditable="true" />
+          @keydown="choseSearchItem($event)" contenteditable="true" @focus="isSearchInputFouce = true"
+          @blur="isSearchInputFouce = false" />
         <template v-if="curEngine.extra">
           <input v-for="(v, k) in curEngine.extra" :key="k" type="hidden" :name="k" :value="v">
         </template>
@@ -230,6 +233,10 @@ watch(isShowEngineList, (val: any) => {
 
   .search-box-radius-2 {
     border-radius: 10px 10px 10px 0;
+  }
+
+  .search-box-shadow {
+    box-shadow: 0 0 8px;
   }
 
   #search-box {

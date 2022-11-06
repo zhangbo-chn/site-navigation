@@ -172,7 +172,7 @@ watch(isShowEngineList, (val: any) => {
           <input v-for="(v, k) in curEngine.extra" :key="k" type="hidden" :name="k" :value="v">
         </template>
         <button type="submit">
-          <img id="search-btn" src="@/assets/img/searchBox/icon-search.svg" alt="" />
+          <img id="search-btn" :src="getImgSrc('assets/img/searchBox/icon-search.svg')" alt="" />
         </button>
       </form>
     </div>

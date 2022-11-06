@@ -1,3 +1,152 @@
+<script setup lang="ts">
+import { watch } from 'vue';
+import searchEngine from '../assets/json/searchEngine.json'
+import { ref } from 'vue'
+
+interface Engine {
+  name: string,
+  icon: string,
+  logo: string,
+  color: string,
+  searchlink: string,
+  searchname: string,
+  placeholder: string,
+  extra: Record<string, unknown> | null
+}
+
+let searchEngineList = searchEngine,
+  searchText = ref<string>(""),
+  curEngine = ref<Engine>({
+    name: "",
+    icon: "",
+    logo: "",
+    color: "",
+    searchlink: "",
+    searchname: "",
+    placeholder: "",
+    extra: null
+  }),
+  searchList = ref<string[]>([]),
+  isShowSearchList = ref<boolean>(false),
+  curSearchItem = ref<number>(-1),
+  isSearchListLock = false,
+  oldSearchText = "",
+  isShowEngineList = ref<boolean>(false)
+
+const engineStr = localStorage.getItem("engine");
+curEngine.value = engineStr ? JSON.parse(engineStr) : searchEngineList[0];
+localStorage.setItem("engine", JSON.stringify(curEngine.value));
+
+function getImgSrc(img: string) {
+  return new URL(`../${img}`, import.meta.url).href;
+}
+
+function checkForm(e: any) {
+  if (searchText.value.replace(/\s+/g, "") !== "") {
+    return
+  }
+  e.preventDefault()
+}
+
+function searchListClick(event: any) {
+  window.location.href = event.currentTarget.dataset.href
+}
+
+function choseSearchItem(event: any) {
+  if (searchList.value.length === 0) return;
+
+  if (event.keyCode === 38) {
+    if (curSearchItem.value === -1) {
+      curSearchItem.value = searchList.value.length - 1
+      searchText.value = searchList.value[curSearchItem.value]
+    } else {
+      curSearchItem.value--
+      if (curSearchItem.value === -1) {
+        searchText.value = oldSearchText
+      } else {
+        searchText.value = searchList.value[curSearchItem.value]
+      }
+    }
+    isSearchListLock = true
+  } else if (event.keyCode === 40) {
+    if (curSearchItem.value === searchList.value.length - 1) {
+      curSearchItem.value = -1
+      searchText.value = oldSearchText
+    } else {
+      curSearchItem.value++
+      searchText.value = searchList.value[curSearchItem.value]
+    }
+    isSearchListLock = true
+  }
+}
+
+function liHover(index: number) {
+  curSearchItem.value = index
+}
+
+function choseEngine(name: string) {
+  if (curEngine.value.name !== name) {
+    for (const r of searchEngineList) {
+      if (r.name === name) {
+        curEngine.value = r
+        isShowEngineList.value = false
+        localStorage.setItem("engine", JSON.stringify(curEngine.value))
+        return
+      }
+    }
+  }
+}
+
+function queryString(obj: Record<string, unknown>) {
+  const str = Object.keys(obj).map(r => `${r}=${obj[r]}`).join('&')
+  return str
+}
+
+watch(
+  searchText, (val: string) => {
+    if (isSearchListLock) {
+      isSearchListLock = false
+      return
+    }
+    curSearchItem.value = -1
+    oldSearchText = searchText.value
+    if (val === "") {
+      searchList.value = []
+      isShowSearchList.value = false
+    } else {
+      window.suggestSearch = function (msg: any) {
+        if (msg['s'] && msg['s'].length > 0) {
+          searchList.value = msg['s']
+          isShowSearchList.value = true
+        }
+      }
+      const script = document.createElement('script')
+      script.src = "https://www.baidu.com/su?wd=" + val + "&cb=suggestSearch"
+      document.head.appendChild(script)
+      document.head.removeChild(script)
+
+      document.onclick = () => {
+        document.onclick = null
+        searchList.value = []
+        isShowSearchList.value = false
+      }
+    }
+  }
+)
+
+watch(isShowEngineList, (val: any) => {
+  if (val) {
+    setTimeout(() => {
+      document.onclick = () => {
+        document.onclick = null
+        isShowEngineList.value = false
+      }
+    })
+  }
+})
+</script>
+
+
 <template>
   <div id="search">
     <div id="search-logo">
@@ -47,155 +196,6 @@
   </div>
 </template>
 
-<script lang="ts">
-import searchEngine from '../assets/json/searchEngine.json'
-
-interface Engine {
-  name: string,
-  icon: string,
-  logo: string,
-  color: string,
-  searchlink: string,
-  searchname: string,
-  placeholder: string,
-  extra: Record<string, unknown> | null
-}
-
-export default {
-  name: "SearchBox",
-  data() {
-    return {
-      searchEngineList: searchEngine,
-      searchText: "",
-      curEngine: {
-        name: "",
-        icon: "",
-        logo: "",
-        color: "",
-        searchlink: "",
-        searchname: "",
-        placeholder: "",
-        extra: null
-      } as Engine,
-      searchList: [],
-      isShowSearchList: false,
-      curSearchItem: -1,
-      isSearchListLock: false,
-      oldSearchText: "",
-      isShowEngineList: false
-    }
-  },
-  mounted() {
-    const engineStr = localStorage.getItem("engine")
-    this.curEngine = engineStr ? JSON.parse(engineStr) : this.searchEngineList[0]
-    localStorage.setItem("engine", JSON.stringify(this.curEngine))
-  },
-  methods: {
-    getImgSrc(img: string) {
-      return new URL(`../${img}`, import.meta.url).href
-    },
-    checkForm(e: any) {
-      if (this.searchText.replace(/\s+/g, "") !== "") {
-        return
-      }
-      e.preventDefault()
-    },
-    searchListClick(event: any) {
-      window.location.href = event.currentTarget.dataset.href
-    },
-    choseSearchItem(event: any) {
-      if (this.searchList.length === 0) return;
-
-      if (event.keyCode === 38) {
-        if (this.curSearchItem === -1) {
-          this.curSearchItem = this.searchList.length - 1
-          this.searchText = this.searchList[this.curSearchItem]
-        } else {
-          this.curSearchItem--
-          if (this.curSearchItem === -1) {
-            this.searchText = this.oldSearchText
-          } else {
-            this.searchText = this.searchList[this.curSearchItem]
-          }
-        }
-        this.isSearchListLock = true
-      } else if (event.keyCode === 40) {
-        if (this.curSearchItem === this.searchList.length - 1) {
-          this.curSearchItem = -1
-          this.searchText = this.oldSearchText
-        } else {
-          this.curSearchItem++
-          this.searchText = this.searchList[this.curSearchItem]
-        }
-        this.isSearchListLock = true
-      }
-    },
-    liHover(index: number) {
-      this.curSearchItem = index
-    },
-    choseEngine(name: string) {
-      if (this.curEngine.name !== name) {
-        for (const r of this.searchEngineList) {
-          if (r.name === name) {
-            this.curEngine = r
-            this.isShowEngineList = false
-            localStorage.setItem("engine", JSON.stringify(this.curEngine))
-            return
-          }
-        }
-      }
-    },
-    queryString(obj: Record<string, unknown>) {
-      const str = Object.keys(obj).map(r => `${r}=${obj[r]}`).join('&')
-      return str
-    }
-  },
-  watch: {
-    searchText: {
-      handler: function (val) {
-        if (this.isSearchListLock) {
-          this.isSearchListLock = false
-          return
-        }
-        this.curSearchItem = -1
-        this.oldSearchText = this.searchText
-        if (val === "") {
-          this.searchList = []
-          this.isShowSearchList = false
-        } else {
-          let self = this
-          window.suggestSearch = function (msg: any) {
-            if (msg['s'] && msg['s'].length > 0) {
-              self.searchList = msg['s']
-              self.isShowSearchList = true
-            }
-          }
-          const script = document.createElement('script')
-          script.src = "https://www.baidu.com/su?wd=" + val + "&cb=suggestSearch"
-          document.head.appendChild(script)
-          document.head.removeChild(script)
-
-          document.onclick = () => {
-            document.onclick = null
-            this.searchList = []
-            this.isShowSearchList = false
-          }
-        }
-      }
-    },
-    isShowEngineList: function (val) {
-      if (val) {
-        setTimeout(() => {
-          document.onclick = () => {
-            document.onclick = null
-            this.isShowEngineList = false
-          }
-        })
-      }
-    }
-  }
-}
-</script>
 
 <style scoped lang="scss">
 #search {

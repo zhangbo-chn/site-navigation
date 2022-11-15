@@ -38,6 +38,11 @@ const engineStr = localStorage.getItem("engine");
 curEngine.value = engineStr ? JSON.parse(engineStr) : searchEngineList[0];
 localStorage.setItem("engine", JSON.stringify(curEngine.value));
 
+function getImgSrc(url: string) {
+  return new URL(`../assets/${url}`, import.meta.url).href;
+
+}
+
 function checkForm(e: any) {
   if (searchText.value.replace(/\s+/g, "") !== "") {
     return
@@ -147,7 +152,7 @@ watch(isShowEngineList, (val: any) => {
 <template>
   <div id="search">
     <div id="search-logo">
-      <img id="search-logo-img" :src="curEngine.logo" alt="">
+      <img id="search-logo-img" :src="getImgSrc(curEngine.logo)" alt="">
     </div>
     <div id="search-box" :style="'border-color:' + curEngine.color" :class="{
       'search-box-active': isShowSearchList,
@@ -158,7 +163,7 @@ watch(isShowEngineList, (val: any) => {
       'search-box-shadow': isSearchInputFouce
     }">
       <img id="search-icon" @click="isShowEngineList = !isShowEngineList" v-if="curEngine.icon"
-        :src="curEngine.icon" alt="" />
+        :src="getImgSrc(curEngine.icon)" alt="" />
       <form @submit="checkForm" ref="searchFrom" :action="curEngine.searchlink" id="search-form">
         <input id="search-input" v-model="searchText" type="text" autocomplete="new-password"
           :name="curEngine.searchname" :placeholder="curEngine.placeholder" size="100"
@@ -168,7 +173,7 @@ watch(isShowEngineList, (val: any) => {
           <input v-for="(v, k) in curEngine.extra" :key="k" type="hidden" :name="k" :value="v">
         </template>
         <button type="submit">
-          <img id="search-btn" src="/src/assets/img/searchBox/icon-search.svg" alt="" />
+          <img id="search-btn" :src="getImgSrc(`img/searchBox/icon-search.svg`)" alt="" />
         </button>
       </form>
     </div>
@@ -186,7 +191,7 @@ watch(isShowEngineList, (val: any) => {
       <ul>
         <template v-for="(item, index) in searchEngineList" :key="index">
           <li v-if="curEngine.name !== item.name" @click="choseEngine(item.name)">
-            <img class="engine-icon" :src="item.icon" alt="">
+            <img class="engine-icon" :src="getImgSrc(item.icon)" alt="">
             <span class="engine-name">{{ item.name }}</span>
           </li>
         </template>

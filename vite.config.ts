@@ -10,7 +10,7 @@ export default defineConfig({
   base: "./",
   plugins: [vue(), vueJsx()],
   build: {
-    outDir: 'docs',
+    outDir: 'www',
     assetsDir: 'public',
   },
   resolve: {

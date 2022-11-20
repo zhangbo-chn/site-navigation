@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { watch } from 'vue';
+import { watch, ref } from 'vue'
 import searchEngine from '../assets/json/searchEngine.json'
-import { ref } from 'vue'
 
 interface Engine {
   name: string,
@@ -40,7 +39,6 @@ localStorage.setItem("engine", JSON.stringify(curEngine.value));
 
 function getImgSrc(url: string) {
   return new URL(`../assets/${url}`, import.meta.url).href;
-
 }
 
 function checkForm(e: any) {

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SearchBox from '../components/SearchBox.vue'
+import SearchBox from '../components/SearchBox.vue';
 </script>
 
 <template>
@@ -9,7 +9,7 @@ import SearchBox from '../components/SearchBox.vue'
 </template>
 
 <style>
-  main{
-    max-width: 800px;
-  }
+main {
+  max-width: 800px;
+}
 </style>

@@ -285,11 +285,7 @@ watch(isShowEngineList, (val: any) => {
     background-color: #FDFEFE;
     padding: 8px;
     border-radius: 0 0 10px 10px;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    -khtml-user-select: none;
-    user-select: none;
+    
 
     ul {
       width: 100%;
@@ -325,12 +321,6 @@ watch(isShowEngineList, (val: any) => {
     width: 100px;
 
     ul {
-      -moz-user-select: none;
-      -webkit-user-select: none;
-      -ms-user-select: none;
-      -khtml-user-select: none;
-      user-select: none;
-
       li {
         width: 100%;
         padding-left: 10px;

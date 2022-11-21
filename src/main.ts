@@ -4,12 +4,9 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 
-import './assets/main.css'
-import { getImgSrc } from './assets/js/util'
+import './assets/style/main.css'
 
 const app = createApp(App)
-
-app.config.globalProperties.$getImgSrc = getImgSrc
 
 app.use(createPinia())
 app.use(router)

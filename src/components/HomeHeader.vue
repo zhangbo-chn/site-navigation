@@ -8,7 +8,7 @@ const themeBtnBg = {
 
 let btnImg = ref<string>(""),
   curTheme = ref<string>(""),
-  isThemeDown = ref<boolean>(true);
+  isThemeAni = ref<boolean>(false);
 
 curTheme.value = localStorage.getItem("theme") || "";
 changeTheme(curTheme.value === "dark", true);
@@ -35,11 +35,13 @@ function changeTheme(isThemeDark: boolean, init: boolean) {
 }
 
 function changeThemeAni(isThemeDark: boolean) {
-  isThemeDown.value = false;
+  isThemeAni.value = true;
   setTimeout(() => {
-    isThemeDown.value = true;
     btnImg.value = isThemeDark ? themeBtnBg.dark : themeBtnBg.light;
   }, 1000);
+  setTimeout(() => {
+    isThemeAni.value = false;
+  }, 2000)
 }
 
 </script>
@@ -47,8 +49,7 @@ function changeThemeAni(isThemeDark: boolean) {
 <template>
   <div id="homeHeader">
     <div id="themeBtn" :class="{
-      'animation-btn-up': !isThemeDown,
-      'animation-btn-down': isThemeDown
+      'animation-btn': isThemeAni,
     }">
       <img :src="getImgSrc(btnImg)" @click="changeTheme(curTheme === 'dark' ? false : true, false)" class="btnIcon" />
     </div>
@@ -67,58 +68,41 @@ function changeThemeAni(isThemeDark: boolean) {
     top: 10px;
 
     .btnIcon {
-      width: 30px;
-      height: 30px;
+      width: 26px;
+      height: 26px;
     }
   }
 
-  .animation-btn-up {
-    animation: btnUp 1s;
-    -webkit-animation: btnUp 1s
+  .animation-btn {
+    animation: btn-up-down 2s;
+    -webkit-animation: btn-up-down 2s
   }
 
-  .animation-btn-down {
-    animation: btnDown 1s;
-    -webkit-animation: btnDown 1s
-  }
-
-  @keyframes btnUp {
+  @keyframes btn-up-down {
     0% {
-      top: 10px;
+      transform: translateY(0),
+    }
+
+    50% {
+      transform: translateY(-120%),
     }
 
     100% {
-      top: -30px;
+      transform: translateY(0),
     }
   }
 
-  @-webkit-keyframes btnUp {
+  @-webkit-keyframes btn-up-down {
     0% {
-      top: 10px;
+      transform: translateY(0),
+    }
+
+    50% {
+      transform: translateY(-120%),
     }
 
     100% {
-      top: -30px;
-    }
-  }
-
-  @keyframes btnDown {
-    0% {
-      top: -30px;
-    }
-
-    100% {
-      top: 10px;
-    }
-  }
-
-  @-webkit-keyframes btnDown {
-    0% {
-      top: -30px;
-    }
-
-    100% {
-      top: 10px;
+      transform: translateY(0),
     }
   }
 }

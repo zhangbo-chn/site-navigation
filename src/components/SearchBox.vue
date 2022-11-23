@@ -201,14 +201,13 @@ watch(isShowEngineList, (val: any) => {
 
 <style scoped lang="scss">
 #search {
-  max-width: 550px;
+  max-width: 35rem;
+  margin: 0 auto;
 
   #search-logo {
-    width: 100%;
     text-align: center;
-
     #search-logo-img {
-      max-width: 80%;
+      max-width: 60%;
     }
   }
 

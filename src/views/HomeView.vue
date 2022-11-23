@@ -1,14 +1,9 @@
 <script setup lang="ts">
-import SearchBox from '../components/SearchBox.vue';
 import HomeHeader from '../components/HomeHeader.vue';
+import SearchBox from '../components/SearchBox.vue';
 </script>
 
 <template>
-  <main>
-    <HomeHeader />
-    <SearchBox />
-  </main>
+  <HomeHeader />
+  <SearchBox />
 </template>
-
-<style>
-</style>

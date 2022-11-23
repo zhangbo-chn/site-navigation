@@ -6,8 +6,16 @@ const themeBtnBg = {
   light: 'img/home/light.png',
 }
 
+const menuBtnBg = {
+  openDark: 'img/home/menu-open-dark.svg',
+  openLight: 'img/home/menu-open-light.svg',
+  closeDark: 'img/home/menu-close-dark.svg',
+  closeLight: 'img/home/menu-close-light.svg',
+}
+
 let btnImg = ref<string>(""),
   curTheme = ref<string>(""),
+  isMenuOpen = ref<boolean>(false),
   isThemeAni = ref<boolean>(false);
 
 curTheme.value = localStorage.getItem("theme") || "";
@@ -44,12 +52,21 @@ function changeThemeAni(isThemeDark: boolean) {
   }, 2000)
 }
 
+function openMenu() {
+  isMenuOpen.value = !isMenuOpen.value;
+}
+
 </script>
 
 <template>
   <div id="homeHeader">
+    <div id="menu">
+      <img
+        :src="getImgSrc(isMenuOpen ? (curTheme === 'dark' ? menuBtnBg.openDark : menuBtnBg.openLight) : (curTheme === 'dark' ? menuBtnBg.closeDark : menuBtnBg.closeLight))"
+        @click="openMenu" alt="">
+    </div>
     <div id="themeBtn" :class="{
-      'animation-btn': isThemeAni,
+      'animation-btn': isThemeAni
     }">
       <img :src="getImgSrc(btnImg)" @click="changeTheme(curTheme === 'dark' ? false : true, false)" class="btnIcon" />
     </div>
@@ -59,17 +76,21 @@ function changeThemeAni(isThemeDark: boolean) {
 <style scoped lang="scss">
 #homeHeader {
   width: 100%;
-  position: relative;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+
+  #menu {
+    >img{
+      width: 26px;
+    }
+  }
 
   #themeBtn {
     z-index: 9;
-    position: absolute;
-    right: 0;
-    top: 10px;
 
     .btnIcon {
       width: 26px;
-      height: 26px;
     }
   }
 

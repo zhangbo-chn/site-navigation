@@ -175,7 +175,8 @@ watch(isShowEngineList, (val: any) => {
         </button>
       </form>
     </div>
-    <div id="search-list" v-show="searchList.length > 0" :style="'border-color:' + curEngine.color">
+    <div id="search-list" v-show="searchList.length > 0" :style="'border-color:' + curEngine.color"
+      :class="{ 'search-list-shadow': isSearchInputFouce }">
       <ul>
         <li v-for="(item, index) in searchList" :key="index"
           :data-href="curEngine.searchlink + '?' + curEngine.searchname + '=' + item + (curEngine.extra ? '&' + queryString(curEngine.extra) : '')"
@@ -206,6 +207,7 @@ watch(isShowEngineList, (val: any) => {
 
   #search-logo {
     text-align: center;
+
     #search-logo-img {
       max-width: 60%;
     }
@@ -245,7 +247,7 @@ watch(isShowEngineList, (val: any) => {
     height: 42px;
     background: 0 0;
     padding: 0 10px;
-    background-color: #FDFEFE;
+    background-color: var(--vt-c-white);
 
     #search-icon {
       width: 22px;
@@ -260,7 +262,7 @@ watch(isShowEngineList, (val: any) => {
       #search-input {
         height: 40px;
         width: 100%;
-        background-color: #FDFEFE;
+        background-color: var(--vt-c-white);
         border: none;
         margin: 0 8px;
         font-size: 16px;
@@ -275,16 +277,20 @@ watch(isShowEngineList, (val: any) => {
 
   }
 
+  .search-list-shadow{
+    box-shadow: -5px 5px 10px -4px, 5px 5px 10px -4px;
+  }
+
   #search-list {
     border: 1px solid #FFF;
     border-top: none;
     margin: 0 auto;
     text-align: left;
     width: 100%;
-    background-color: #FDFEFE;
+    background-color: var(--vt-c-white);
     padding: 8px;
     border-radius: 0 0 10px 10px;
-    
+
 
     ul {
       width: 100%;

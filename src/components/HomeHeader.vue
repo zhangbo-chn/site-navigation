@@ -81,7 +81,7 @@ function openMenu() {
   justify-content: space-between;
 
   #menu {
-    >img{
+    >img {
       width: 26px;
     }
   }
